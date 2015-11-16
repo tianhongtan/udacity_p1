@@ -8,36 +8,38 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" media="(min-width: 700px)" type="text/css" href="mid.css">
   </head>
   <body>
-	<nav id="drawer" class="nav">
-      <ul class="nav__list">
-        <li class="nav__item"><a href="#">News</a></li>
+    <header class="header flex">
+      <div class="header__inner flex__element">
+        <img class="header__logo order_1" src="images/city.png" alt="iconic view of a cityscape">
+				<h1 class="header__title order_2">
+						The Brighton Times
+				</h1>
+				<i class="fa fa-bars flex-element fa-3x order_3 header__menu" id="menu"></i>
+      </div>
+    </header>
+		
+		<nav id="drawer flex" class="nav">
+      <ul class="nav__list flex-element">
+        <li class="nav__item"><a href="#news">News</a></li>
         <li class="nav__item"><a href="#">Events</a></li>
         <li class="nav__item"><a href="#">Culture</a></li>
         <li class="nav__item"><a href="#">Blog</a></li>
       </ul>
     </nav>
-	
-    <header class="header">
-      <div class="header__inner">
-        <img class="header__logo" src="images/city.png" alt="iconic view of a cityscape">
-		<h1 class="header__title">
-          The Brighton Times
-        </h1>
-      </div>
-    </header>
-
-    <main>
-      <section class="content">
-        <section class="hero">
+    
+		<main>
+      <section class="content flex">
+        <section class="hero flex__element">
           <article class="description">
             <h2>Absolutely astonishing breaking news!</h2>
             <p>Organic raw denim Vice keffiyeh lomo Kickstarter art lomo Kickstarter art four loko. Organic raw denim Vice keffiyeh lomo Kickstarter art lomo Kickstarter art four loko.</p>
           </article>
         </section>
 
-        <section class="news top-news">
+        <section class="news top-news flex__element">
           <h2 class="news__title">Top news <a href="#" class="news__more">+ more</a></h2>
           <ul>
             <li class="top-news__item order_1">
@@ -55,7 +57,7 @@
           </ul>
         </section>
 
-        <section class="scores">
+        <section class="scores flex__element">
           <table class="scores__table">
             <thead>
               <tr>
@@ -106,7 +108,7 @@
           </table>
         </section>
 
-        <section class="weather">
+        <section class="weather flex__element">
           <span class="weather__location">Brighton, UK</span>
           <span class="weather__desc">Sunny</span>
           <span class="weather__today">
@@ -137,7 +139,7 @@
           </ul>
         </section>
 
-        <section class="news recent-news">
+        <section class="news recent-news flex__element">
           <h2 class="news__title">Latest news <a href="#" class="news__more">+ more</a></h2>
           <ul>
             <li class="snippet">
@@ -178,5 +180,18 @@
         </ul>
       </footer>
     </main>
+	
+	<script> 
+		var menu = document.querySelector('#menu');
+		var main = document.querySelector('main');
+		var drawer = document.querySelector('#drawer');
+		menu.addEventListener('click', function(e) {
+			drawer.classList.toggle('open');
+			e.stopPropagation();
+		});
+		main.addEventListener('click', function() {
+			drawer.classList.remove('open');
+		});
+	</script>
   </body>
 </html>

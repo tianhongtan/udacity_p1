@@ -1,0 +1,27 @@
+.flex__element {
+	flex: 1 0 50%;
+}
+
+.nav { 
+	position:relative;
+	-webkit-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+
+.header__menu{
+	display:none;
+}
+
+.header__logo {
+	max-width: 72px;
+}
+
+.header__title{ 
+	font-size: 4em;
+}
+
+main , .nav, .header{ 
+max-width: 1200px;
+margin-left: auto;
+margin-right: auto;
+}
